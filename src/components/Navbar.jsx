@@ -15,7 +15,7 @@ export default function Navbar() {
                 <AnchorLink href="#about-me" offset={20}>About Me</AnchorLink>
             </li>
             <li>
-                <AnchorLink href="#services">Services</AnchorLink>
+                <AnchorLink href="#services" offset={20}>Services</AnchorLink>
             </li>
             <li>
                 <AnchorLink href="#portfolio">Portfolio</AnchorLink>

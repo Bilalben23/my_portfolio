@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%)',
-        'text-bg': 'linear-gradient(270deg, #DF8908 10%, #B415FF 100%)'
+        'text-bg': 'linear-gradient(270deg, #DF8908 10%, #B415FF 100%)',
+        'card-gradient': 'linear-gradient(45deg, #3f0028, #582300)'
       }
     },
   },

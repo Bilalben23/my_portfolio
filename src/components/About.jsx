@@ -7,7 +7,7 @@ export default function About() {
                 <h1 className='px-2 font-bold text-2xl tracking-wider'>About Me</h1>
                 <img src="/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
             </div>
-            <div className='flex justify-evenly items-center space-x-5'>
+            <div className='flex justify-evenly space-x-5'>
                 <div className='w-[35%]'>
                     <img src="/assets/profile-pic-big.png" alt="profile" className='w-full' />
                 </div>
