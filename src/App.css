@@ -14,4 +14,28 @@
         background-color: #161513;
         @apply text-white h-screen;
     }
+
+    progress {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        height: 0.6rem;
+    }
+
+    progress::-webkit-progress-bar {
+        background-color: #e5e7eb;
+        border-radius: 0.25rem;
+    }
+
+    progress::-webkit-progress-value {
+        background: linear-gradient(164deg, #DF8908 -5.09%, #B415FF 106.28%);
+        border-radius: 0.25rem;
+
+    }
+
+    progress::-moz-progress-bar {
+        background: linear-gradient(164deg, #DF8908 -5.09%, #B415FF 106.28%);
+        border-radius: 0.25rem;
+    }
 }

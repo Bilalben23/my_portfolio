@@ -9,23 +9,23 @@ export default function Navbar() {
         </AnchorLink>
         <ul className="flex items-center justify-center space-x-5">
             <li>
-                <AnchorLink href="home">Home</AnchorLink>
+                <AnchorLink href="#home" >Home</AnchorLink>
             </li>
             <li>
-                <AnchorLink href="about-me">About Me</AnchorLink>
+                <AnchorLink href="#about-me" offset={20}>About Me</AnchorLink>
             </li>
             <li>
-                <AnchorLink href="services">Services</AnchorLink>
+                <AnchorLink href="#services">Services</AnchorLink>
             </li>
             <li>
-                <AnchorLink href="portfolio">Portfolio</AnchorLink>
+                <AnchorLink href="#portfolio">Portfolio</AnchorLink>
             </li>
             <li>
-                <AnchorLink href="contact">Contact</AnchorLink>
+                <AnchorLink href="#contact">Contact</AnchorLink>
             </li>
         </ul>
         <div>
-            <button type="button" className="py-2 px-5 rounded-2xl font-semibold bg-custom-gradient text-sm transition duration-500 hover:scale-105 hover:opacity-90">Connect With Me</button>
+            <button type="button" className="py-2.5 px-5 rounded-2xl font-semibold bg-custom-gradient text-xs transition duration-500 hover:scale-105 hover:opacity-90">Connect With Me</button>
         </div>
     </nav>;
 }
