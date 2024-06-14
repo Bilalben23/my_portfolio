@@ -3,7 +3,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
 export default function Navbar() {
-    return <nav className="flex items-center justify-between py-1 px-10 text-white">
+    return <nav className="flex items-center justify-between px-10 py-1 text-white">
         <AnchorLink href="home" className="w-[100px] h-[100px] block">
             <img src='/assets/logo-no-background.svg' alt="logo" className="w-full h-full rounded-full" />
         </AnchorLink>
@@ -21,7 +21,7 @@ export default function Navbar() {
                 <AnchorLink href="#portfolio">Portfolio</AnchorLink>
             </li>
             <li>
-                <AnchorLink href="#contact">Contact</AnchorLink>
+                <AnchorLink href="#contact" offset={20}>Contact</AnchorLink>
             </li>
         </ul>
         <div>
