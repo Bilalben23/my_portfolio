@@ -6,6 +6,8 @@ import Services from "./components/Services";
 import MyWork from "./components/MyWork";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import BackTopButton from "./components/BackTopButton";
+import WhatsAppBtn from "./components/WhatsAppBtn";
 // import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export default function App() {
@@ -18,6 +20,8 @@ export default function App() {
       <MyWork />
       <Contact />
       <Footer />
+      <BackTopButton />
+      <WhatsAppBtn />
     </>
   );
 }

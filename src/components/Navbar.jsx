@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
+import { FaBars, FaTimes } from "react-icons/fa"
 
 export default function Navbar() {
 
@@ -13,8 +13,10 @@ export default function Navbar() {
     return <nav className="flex items-center justify-between px-10 py-1 text-white">
         <AnchorLink href="#home" className="w-[100px] h-[100px] block">
             <img src='/assets/logo-no-background.svg' alt="logo" className="w-full h-full rounded-full drop-shadow-xl" />
+            <FaBars />
         </AnchorLink>
         <ul className="flex items-center justify-center space-x-5">
+            <FaTimes />
             <li onClick={() => handleMenuClick('home')}>
                 <AnchorLink href="#home" className="flex flex-col space-y-0.5">
                     <span>Home</span>

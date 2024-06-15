@@ -11,7 +11,7 @@ export default function MyWork() {
                 <h3 className='px-2 text-2xl font-bold tracking-wider'>My Latest Work</h3>
                 <img src="/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
             </div>
-            <div className='grid grid-cols-3 gap-x-5 gap-y-8 w-[90%] mx-auto'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-5 gap-y-8 w-[95%] sm:w-[90%] mx-auto'>
                 {
                     myWorkData.map(work => {
                         return <WorkCard
@@ -36,7 +36,7 @@ function WorkCard({ work }) {
     return (
         <div className='border-transparent border-2 hover:border-2 hover:border-[#ff00ff] cursor-pointer px-1 py-0.5 rounded-md hover:scale-[1.02] transition'>
             <p className='mb-0.5'>{work.w_name}</p>
-            <img src={work.w_img} alt={work.w_name} className='w-full h-[220px] rounded' />
+            <img src={work.w_img} alt={work.w_name} className='w-full h-[300px] sm:h-[220px] rounded' />
         </div>
     )
 }

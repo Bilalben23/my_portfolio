@@ -140,29 +140,29 @@ export default function Contact() {
                 <h2 className='px-2 text-2xl font-bold tracking-wider'>Get in Touch</h2>
                 <img src="/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
             </div>
-            <div className='flex justify-between w-[90%] mx-auto'>
-                <div className='w-[48%]'>
+            <div className='flex justify-between w-[95%] md:w-[90%] mx-auto flex-col md:flex-row'>
+                <div className='w-full md:w-[48%]'>
                     <h4 className='text-2xl font-bold leading-10 text-transparent bg-clip-text bg-custom-gradient'>Let's Talk</h4>
-                    <p className="max-w-[90%] text-[#D8D8D8] text-sm">
+                    <p className="max-w-[95%] md:max-w-[90%] text-[#D8D8D8] text-sm">
                         I am currently available for new projects! Feel free to reach out with any ideas or work you have in mind. I'm here to help, and you can contact me anytime.
                     </p>
-                    <address className='flex flex-col mt-5 space-y-5 text-[#D8D8D8]'>
-                        <a href="mailto:bilalbeny735@gmail.com?subject=Project%20Inquiry&body=Hi%20Bilal,%0D%0A%0D%0AI%20am%20interested%20in%20discussing%20a%20project%20with%20you.%20Please%20let%20me%20know%20your%20availability.%0D%0A%0D%0AThanks!" className='flex items-center space-x-3'>
+                    <address className='flex flex-col mb-8 mt-3 md:mt-5 md:mb-0 space-y-2.5 md:space-y-5 text-[#D8D8D8]'>
+                        <a href="mailto:bilalbeny735@gmail.com?subject=Project%20Inquiry&body=Hi%20Bilal,%0D%0A%0D%0AI%20am%20interested%20in%20discussing%20a%20project%20with%20you.%20Please%20let%20me%20know%20your%20availability.%0D%0A%0D%0AThanks!" className='flex items-center space-x-3' target='_blank' rel="noreferrer" >
                             <FaEnvelope />
                             <p className='font-medium transition hover:underline'>bilalbeny735@gmail.com</p>
                         </a>
-                        <a href='tel:+212664897030' className='flex items-center space-x-3'>
+                        <a href='tel:+212664897030' target='_blank' rel="noreferrer" className='flex items-center space-x-3'>
                             <FaPhoneVolume />
                             <p className='font-medium transition hover:underline'>0664897030</p>
                         </a>
-                        <a href='#' className='flex items-center space-x-3'>
+                        <a href='https://maps.app.goo.gl/1ahuvniAz33bkmq49' target='_blank' rel="noreferrer" className='flex items-center space-x-3'>
                             <FaMapMarkerAlt />
                             <p className='font-medium transition hover:underline'>Morocco, Chafchouen</p>
                         </a>
                     </address>
                 </div>
 
-                <div className='w-[48%]'>
+                <div className='w-fll md:w-[48%]'>
                     <form method='post' className='flex flex-col w-full space-y-3' onSubmit={handleOnSubmit}>
                         <div>
                             <input
@@ -213,7 +213,7 @@ export default function Contact() {
                         <div>
                             <button
                                 type='submit'
-                                className={`px-4 py-2 text-sm font-semibold text-white transition rounded-3xl bg-custom-gradient hover:scale-[1.05] ring-white ${isSubmitted ? 'ring-2' : ''}`}
+                                className={`px-4 py-2 text-xs font-semibold text-white transition rounded-3xl bg-custom-gradient hover:scale-[1.05] ring-white ${isSubmitted ? 'ring-2' : ''}`}
                                 disabled={isSubmitted} // Disable button during submission
                             >{isSubmitted ? 'Submitting...' : 'Submit Now'}</button>
                         </div>
