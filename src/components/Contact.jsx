@@ -137,12 +137,12 @@ export default function Contact() {
     return (
         <div className='mb-[80px]' id='contact'>
             <div className='relative mx-auto mb-8 w-fit'>
-                <h2 className='px-2 text-2xl font-bold tracking-wider'>Get in Touch</h2>
+                <h2 className='px-2 text-xl md:text-2xl font-bold tracking-wider'>Get in Touch</h2>
                 <img src="/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
             </div>
-            <div className='flex justify-between w-[95%] md:w-[90%] mx-auto flex-col md:flex-row'>
+            <div className='flex justify-between w-[90%] mx-auto flex-col md:flex-row'>
                 <div className='w-full md:w-[48%]'>
-                    <h4 className='text-2xl font-bold leading-10 text-transparent bg-clip-text bg-custom-gradient'>Let's Talk</h4>
+                    <h4 className='text-xl md:text-2xl font-bold leading-10 text-transparent bg-clip-text bg-custom-gradient'>Let's Talk</h4>
                     <p className="max-w-[95%] md:max-w-[90%] text-[#D8D8D8] text-sm">
                         I am currently available for new projects! Feel free to reach out with any ideas or work you have in mind. I'm here to help, and you can contact me anytime.
                     </p>

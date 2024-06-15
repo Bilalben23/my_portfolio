@@ -3,12 +3,12 @@ import React from 'react'
 export default function About() {
     return (
         <div className='flex flex-col items-center justify-center space-y-5 my-[80px]' id="about-me">
-            <div className='relative mb-4'>
-                <h1 className='px-2 font-bold text-2xl tracking-wider'>About Me</h1>
+            <div className='relative mb-0 md:mb-4'>
+                <h1 className='px-2 font-bold text-xl md:text-2xl tracking-wider'>About Me</h1>
                 <img src="/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
             </div>
-            <div className='flex justify-evenly md:space-x-5 space-x-0 space-y-5 md:space-y-0 flex-col md:flex-row'>
-                <div className='w-[90%] md:w-[35%] self-center'>
+            <div className='flex justify-evenly md:space-x-5 space-x-0 space-y-1.5 md:space-y-0 flex-col md:flex-row'>
+                <div className='hidden w-[35%] md:block'>
                     <img src="/assets/profile-pic-big.png" alt="profile" className='w-full aspect-square rounded md:rounded-none' />
                 </div>
 
@@ -51,20 +51,20 @@ export default function About() {
                 </div>
             </div>
 
-            <div className='flex justify-around w-[90%] space-y-3 md:space-y-0 items-stretch flex-col md:flex-row'>
-                <div className='flex flex-col items-center justify-center space-y-1 transition hover:scale-105'>
+            <div className='flex justify-around w-fit mx-auto space-y-3 md:space-y-0 items-stretch flex-col md:w-full md:flex-row'>
+                <div className='flex flex-row space-x-3 md:space-x-0 md:flex-col items-center md:justify-center space-y-1 transition hover:scale-105'>
                     <span className='text-white text-lg font-bold bg-clip-text text-transparent bg-text-bg'>2+</span>
-                    <p className='text-white text-xs'>YEARS OF EXPERIENCE</p>
+                    <p className='text-white text-xs tracking-wide'>YEARS OF EXPERIENCE</p>
                 </div>
-                <div class="w-1/2 h-[2px] self-center md:self-auto md:h-auto md:w-[2px] rounded-xl bg-white"></div>
-                <div className='flex flex-col items-center justify-center space-y-1 transition hover:scale-105'>
+                <div className="w-1/2 h-[2px] self-center md:self-auto md:h-auto md:w-[2px] rounded-xl bg-white"></div>
+                <div className='flex flex-row md:flex-col space-x-3 md:space-x-0 items-center md:justify-center space-y-1 transition hover:scale-105'>
                     <span className='text-white text-lg font-bold bg-clip-text text-transparent bg-text-bg'>90+</span>
-                    <p className='text-white text-xs'>PROJECTS COMPLETED</p>
+                    <p className='text-white text-xs tracking-wider' >PROJECTS COMPLETED</p>
                 </div>
-                <div class="w-1/2 h-[2px] self-center md:self-auto md:h-auto md:w-[2px] rounded-xl bg-white"></div>
-                <div className='flex flex-col items-center justify-center space-y-1 transition hover:scale-105'>
+                <div className="w-1/2 h-[2px] self-center md:self-auto md:h-auto md:w-[2px] rounded-xl bg-white"></div>
+                <div className='flex flex-row md:flex-col space-x-3 md:space-x-0 items-center md:justify-center space-y-1 transition hover:scale-105'>
                     <span className='text-white text-lg font-bold bg-clip-text text-transparent bg-text-bg'>15+</span>
-                    <p className='text-white text-xs'>HAPPY CLIENTS</p>
+                    <p className='text-white text-xs tracking-wider'>HAPPY CLIENTS</p>
                 </div>
             </div>
         </div>

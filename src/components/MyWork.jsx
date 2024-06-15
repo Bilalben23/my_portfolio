@@ -8,10 +8,10 @@ export default function MyWork() {
     return (
         <div className='flex flex-col items-center justify-center space-y-10 my-[80px]' id="my-works">
             <div className='relative'>
-                <h3 className='px-2 text-2xl font-bold tracking-wider'>My Latest Work</h3>
+                <h3 className='px-2 text-xl md:text-2xl font-bold tracking-wider'>My Latest Work</h3>
                 <img src="/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-5 gap-y-8 w-[95%] sm:w-[90%] mx-auto'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-5 gap-y-8 w-[90%] sm:w-[90%] mx-auto'>
                 {
                     myWorkData.map(work => {
                         return <WorkCard
