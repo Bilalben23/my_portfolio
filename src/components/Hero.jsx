@@ -1,5 +1,5 @@
 import React from 'react'
-
+import AnchorLink from "react-anchor-link-smooth-scroll"
 export default function Hero() {
     return (
         <div className='flex items-center flex-col space-y-3' id="home">
@@ -11,7 +11,7 @@ export default function Hero() {
                 I'm a passionate frontend developer based in Morocco, with over 2 years of experience in web development. I've crafted numerous projects, each adding to my skills and creativity.
             </p>
             <div className='flex justify-between space-x-5 text-md mb-5'>
-                <button type='button' className='px-5 py-2.5 rounded-3xl bg-custom-gradient text-xs hover:border-2 hover:border-white font-semibold'>Connect With Me</button>
+                <AnchorLink href="#contact" className='px-5 py-2.5 rounded-3xl bg-custom-gradient text-xs hover:border-2 hover:border-white font-semibold' offset={20}>Connect With Me</AnchorLink>
                 <button type="button" className='font-semibold px-5 py-2.5 text-xs rounded-3xl border-2 border-white hover:border-2 hover:border-[#B415FF]'>My Resume</button>
             </div>
         </div>

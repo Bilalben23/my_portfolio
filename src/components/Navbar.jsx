@@ -25,7 +25,6 @@ export default function Navbar() {
                 <AnchorLink href="#about-me" offset={20} className="flex flex-col space-y-0.5">
                     <span>About Me</span>
                     {menu === 'about-me' && <img src='/assets/nav_underline.svg' alt="underline" className="w-full h-[18px]" />}
-
                 </AnchorLink>
             </li>
             <li onClick={() => handleMenuClick('services')}>
@@ -42,13 +41,13 @@ export default function Navbar() {
             </li>
             <li onClick={() => handleMenuClick('contact')}>
                 <AnchorLink href="#contact" offset={20} className="flex flex-col space-y-0.5">
-                    Contact
+                    <span>Contact</span>
                     {menu === 'contact' && <img src='/assets/nav_underline.svg' alt="underline" className="w-full h-[18px]" />}
                 </AnchorLink>
             </li>
         </ul>
-        <div>
-            <button type="button" className="py-2.5 px-5 rounded-2xl font-semibold bg-custom-gradient text-xs transition duration-500 hover:scale-105 hover:opacity-90">Connect With Me</button>
+        <div onClick={() => handleMenuClick('contact')}>
+            <AnchorLink href="#contact" className="py-2.5 px-5 rounded-2xl font-semibold bg-custom-gradient text-xs transition duration-500 hover:scale-105 hover:opacity-90" offset={20}>Connect With Me</AnchorLink>
         </div>
     </nav>;
 }

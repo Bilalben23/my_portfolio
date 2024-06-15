@@ -1,7 +1,139 @@
-import React from 'react';
-import { FaEnvelope, FaPhoneVolume, FaMapMarkerAlt } from "react-icons/fa"
+import React, { useState } from 'react';
+import { FaEnvelope, FaPhoneVolume, FaMapMarkerAlt } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+const initialState = {
+    name: '',
+    email: '',
+    message: ''
+}
 
 export default function Contact() {
+    const [formData, setFormData] = useState(initialState);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [errors, setErrors] = useState({
+        name: null,
+        email: null,
+        message: null,
+    });
+
+    const handOnChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            [name]: value
+        }));
+    }
+
+    const handleOnSubmit = async (event) => {
+        event.preventDefault();
+
+        // Reset errors on each submission attempt
+        setErrors({
+            name: null,
+            email: null,
+            message: null,
+        });
+
+        const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        // Client-side validation
+        let formIsValid = true;
+
+        if (formData.name.length < 3) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                name: 'The name is too short (minimum 3 characters).'
+            }));
+            formIsValid = false;
+        }
+
+        if (!regex.test(formData.email)) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                email: 'Please enter a valid email address.'
+            }));
+            formIsValid = false;
+        }
+
+        if (formData.message.length < 10) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                message: 'The message is too short (minimum 10 characters).'
+            }));
+            formIsValid = false;
+
+        } else if (formData.message.length > 400) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                message: 'The message is too long (maximum 400 characters).'
+            }));
+            formIsValid = false;
+        }
+
+        if (formIsValid) {
+            setIsSubmitted(true);
+
+            const form_data = new FormData(event.target);
+            form_data.append("access_key", "9f924301-820b-42c7-a7c5-8a6d4d470f05");
+
+            const object = Object.fromEntries(form_data);
+            const json = JSON.stringify(object);
+
+            try {
+                const res = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json"
+                    },
+                    body: json
+                });
+
+                const data = await res.json();
+                if (res.ok && data.success) {
+                    successNotify();
+                    setFormData(initialState); // Reset form fields
+                } else {
+                    handleApiError(res, data);
+                }
+            } catch (err) {
+                console.log("Error ", err);
+                errorNotify("Failed to submit. Please try again later.");
+            } finally {
+                setIsSubmitted(false);
+
+            }
+        }
+    }
+
+    const handleApiError = (res, data) => {
+        let errorMessage = "Failed to submit. Please try again later.";
+
+        if (res.status === 429) {
+            errorMessage = "Too many requests. Please try again later.";
+        } else if (res.status >= 400 && res.status < 500) {
+            errorMessage = data?.message || "Submission error. Please check your input and try again.";
+        } else if (res.status >= 500 && res.status < 600) {
+            errorMessage = "Server error. Please try again later.";
+        }
+
+        errorNotify(errorMessage);
+    }
+
+    const successNotify = () => {
+        toast.success("Message sent successfully!", {
+            autoClose: 3000 // Close notification after 3 seconds
+        });
+    }
+
+    const errorNotify = (errorMessage) => {
+        toast.error(errorMessage, {
+            autoClose: 3000 // Close notification after 3 seconds
+        });
+    }
+
     return (
         <div className='mb-[80px]' id='contact'>
             <div className='relative mx-auto mb-8 w-fit'>
@@ -29,25 +161,38 @@ export default function Contact() {
                         </a>
                     </address>
                 </div>
+
                 <div className='w-[48%]'>
-                    <form action="" method='post' className='flex flex-col w-full space-y-3'>
+                    <form method='post' className='flex flex-col w-full space-y-3' onSubmit={handleOnSubmit}>
                         <div>
                             <input
                                 type="text"
                                 placeholder='Enter your name...'
                                 name='name'
                                 aria-label='name'
-                                className='w-full px-3 py-2 rounded-sm bg-[#32323c]'
+                                className={`w-full px-3 py-2 rounded-sm bg-[#32323c] ${errors.name ? 'border-red-500 outline-red-500 ring-red-500' : ''}`}
+                                onChange={handOnChange}
+                                value={formData.name}
+                                minLength={3}
+                                maxLength={30}
+                                required
+                                disabled={isSubmitted} // Disable input during submission
                             />
+                            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                         </div>
                         <div>
                             <input
-                                type="email"
+                                type="text"
                                 placeholder='Enter your email...'
                                 name='email'
                                 aria-label='email'
-                                className='w-full px-3 py-2 rounded-sm bg-[#32323c]'
+                                className={`w-full px-3 py-2 rounded-sm bg-[#32323c] ${errors.email ? 'border-red-500 outline-red-500 ring-red-500' : ''}`}
+                                required
+                                onChange={handOnChange}
+                                value={formData.email}
+                                disabled={isSubmitted} // Disable input during submission
                             />
+                            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                         </div>
                         <div>
                             <textarea
@@ -55,23 +200,32 @@ export default function Contact() {
                                 placeholder='Enter your Message...'
                                 name='message'
                                 aria-label='message'
-                                className='py-1.5 px-2 w-full max-h-[400px] min-h-[100px] rounded-sm bg-[#32323c]'
+                                className={`py-1.5 px-2 w-full max-h-[400px] min-h-[100px] rounded-sm bg-[#32323c] ${errors.message ? 'border-red-500 outline-red-500 ring-red-500' : ''}`}
+                                onChange={handOnChange}
+                                value={formData.message}
+                                required
+                                minLength={10}
+                                maxLength={400}
+                                disabled={isSubmitted} // Disable input during submission
                             />
+                            {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                         </div>
                         <div>
                             <button
-                                type='submit' className="px-4 py-2 text-sm font-semibold text-white transition rounded-3xl bg-custom-gradient hover:scale-[1.05] focus:ring-2">Submit Now</button>
+                                type='submit'
+                                className={`px-4 py-2 text-sm font-semibold text-white transition rounded-3xl bg-custom-gradient hover:scale-[1.05] ring-white ${isSubmitted ? 'ring-2' : ''}`}
+                                disabled={isSubmitted} // Disable button during submission
+                            >{isSubmitted ? 'Submitting...' : 'Submit Now'}</button>
                         </div>
                     </form>
                 </div>
             </div>
-        </div >
+            <ToastContainer
+                position='top-center'
+                theme="colored"
+                closeOnClick
+                autoClose={3000} // Close all notifications after 3 seconds
+            />
+        </div>
     )
 }
-// modern way to unstage changes:
-// git restore --staged .
-// git restore --staged <filename>
-
-// traditional way to unstage changes:
-// git reset <filename>
-// git reset

@@ -9,7 +9,7 @@ export default function Footer() {
             <div className='flex justify-between'>
                 <div>
                     <img src='/assets/logo-no-background.svg' alt="logo" className="w-[60px] h-[60px] rounded-full drop-shadow-xl" />
-                    <p className='text-sm max-w-[400px]'>I am a frontend developer from Morocco with 2+ years of experience  </p>
+                    <p className='text-sm max-w-[400px]'> I am a frontend developer from Morocco with 2+ years of experience in creating dynamic and responsive web applications. </p>
                 </div>
                 <form action='#' method='post' className='flex items-center space-x-4'>
                     <div className='flex items-center rounded-2xl pl-3 p-0.5 bg-[#32323c] has-[:focus]:ring-2 ring-white has-[:invalid]:ring-red-600'>
