@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhoneVolume, FaMapMarkerAlt } from "react-icons/fa"
 
 export default function Contact() {
     return (
-        <div className='' id='contact'>
+        <div className='mb-[80px]' id='contact'>
             <div className='relative mx-auto mb-8 w-fit'>
                 <h2 className='px-2 text-2xl font-bold tracking-wider'>Get in Touch</h2>
                 <img src="/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
@@ -17,15 +17,15 @@ export default function Contact() {
                     <address className='flex flex-col mt-5 space-y-5 text-[#D8D8D8]'>
                         <a href="mailto:bilalbeny735@gmail.com?subject=Project%20Inquiry&body=Hi%20Bilal,%0D%0A%0D%0AI%20am%20interested%20in%20discussing%20a%20project%20with%20you.%20Please%20let%20me%20know%20your%20availability.%0D%0A%0D%0AThanks!" className='flex items-center space-x-3'>
                             <FaEnvelope />
-                            <p className='font-semibold transition hover:underline'>bilalbeny735@gmail.com</p>
+                            <p className='font-medium transition hover:underline'>bilalbeny735@gmail.com</p>
                         </a>
                         <a href='tel:+212664897030' className='flex items-center space-x-3'>
                             <FaPhoneVolume />
-                            <p className='font-semibold transition hover:underline'>0664897030</p>
+                            <p className='font-medium transition hover:underline'>0664897030</p>
                         </a>
                         <a href='#' className='flex items-center space-x-3'>
                             <FaMapMarkerAlt />
-                            <p className='font-semibold transition hover:underline'>Morocco, Chafchouen</p>
+                            <p className='font-medium transition hover:underline'>Morocco, Chafchouen</p>
                         </a>
                     </address>
                 </div>

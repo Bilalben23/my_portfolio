@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Hero() {
     return (
-        <div className='flex items-center flex-col space-y-3'>
+        <div className='flex items-center flex-col space-y-3' id="home">
             <div className='w-[300px] max-auto h-[300px] mt-10 mb-2'>
                 <img src='/assets/profile-pic.png' alt="profile" className='w-full h-full rounded-full' />
             </div>
