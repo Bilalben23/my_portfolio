@@ -138,7 +138,7 @@ export default function Contact() {
         <div className='mb-[80px]' id='contact'>
             <div className='relative mx-auto mb-8 w-fit'>
                 <h2 className='px-2 text-xl md:text-2xl font-bold tracking-wider'>Get in Touch</h2>
-                <img src="/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
+                <img src={`${process.env.PUBLIC_URL}/assets/theme_pattern.svg`} alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
             </div>
             <div className='flex justify-between w-[90%] mx-auto flex-col md:flex-row'>
                 <div className='w-full md:w-[48%]'>

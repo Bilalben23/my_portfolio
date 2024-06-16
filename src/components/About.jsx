@@ -5,11 +5,11 @@ export default function About() {
         <div className='flex flex-col items-center justify-center space-y-5 my-[80px]' id="about-me">
             <div className='relative mb-0 md:mb-4'>
                 <h1 className='px-2 font-bold text-xl md:text-2xl tracking-wider'>About Me</h1>
-                <img src="/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
+                <img src={`${process.env.PUBLIC_URL}/assets/theme_pattern.svg`} alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
             </div>
             <div className='flex justify-evenly md:space-x-5 space-x-0 space-y-1.5 md:space-y-0 flex-col md:flex-row'>
                 <div className='hidden w-[35%] md:block'>
-                    <img src="/assets/profile-pic-big.png" alt="profile" className='w-full aspect-square rounded md:rounded-none' />
+                    <img src={`${process.env.PUBLIC_URL}/assets/profile-pic-big.png`} alt="profile" className='w-full aspect-square rounded md:rounded-none' />
                 </div>
 
                 <div className='w-[90%] self-center md:w-[55%] flex flex-col space-y-8'>
