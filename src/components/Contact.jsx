@@ -76,7 +76,7 @@ export default function Contact() {
             setIsSubmitted(true);
 
             const form_data = new FormData(event.target);
-            form_data.append("access_key", "9f924301-820b-42c7-a7c5-8a6d4d470f05");
+            form_data.append("access_key", "20a364bb-6f45-470c-b0e3-abea90521032");
 
             const object = Object.fromEntries(form_data);
             const json = JSON.stringify(object);
