@@ -29,7 +29,7 @@ export default function Navbar() {
     return (
         <nav className="flex items-center justify-between px-10 py-1 text-white">
             <AnchorLink href="#home" className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] absolute top-0 left-2 md:static block">
-                <img src='/assets/logo-no-background.svg' alt="logo" className="w-full h-full rounded-full drop-shadow-xl" />
+                <img src='../../public/assets/logo-no-background.svg' alt="logo" className="w-full h-full rounded-full drop-shadow-xl" />
             </AnchorLink>
             <FaBars
                 size={40}
@@ -46,7 +46,7 @@ export default function Navbar() {
                     <li key={link.id} onClick={() => handleMenuClick(link.to)}>
                         <AnchorLink href={`#${link.to}`} offset={20} className="flex flex-col space-y-0.5">
                             <span className="select-none">{link.label}</span>
-                            {menu === link.to && <img src='/assets/nav_underline.svg' alt="underline" className="w-full h-[18px] animate-pulse" />}
+                            {menu === link.to && <img src='../../public/assets/nav_underline.svg' alt="underline" className="w-full h-[18px] animate-pulse" />}
                         </AnchorLink>
                     </li>
                 ))}

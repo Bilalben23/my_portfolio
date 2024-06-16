@@ -7,7 +7,7 @@ export default function Services() {
         <div className='mb-[80px] flex flex-col justify-center w-[85%] md:w-[95%] mx-auto' id='services'>
             <div className='relative mx-auto mb-8 w-fit'>
                 <h2 className='px-2 text-xl md:text-2xl font-bold tracking-wider'>My Services</h2>
-                <img src="/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
+                <img src="/../../public/assets/theme_pattern.svg" alt="profile" className='w-[70%] h-full absolute right-0 bottom-0 -z-10' />
             </div>
             <div className='grid grid-cols-1 self-center gap-y-5 sm:gap-5 md:grid-cols-2 lg:grid-cols-3' >
                 {

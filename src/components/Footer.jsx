@@ -17,7 +17,7 @@ export default function Footer() {
             <div className='w-[90%] mx-auto flex space-y-5 flex-col pb-5'>
                 <div className='flex justify-between flex-col space-y-5 md:space-y-0 md:flex-row'>
                     <div>
-                        <img src='/assets/logo-no-background.svg' alt="logo" className="w-[60px] h-[60px] rounded-full drop-shadow-xl" />
+                        <img src='../../public/assets/logo-no-background.svg' alt="logo" className="w-[60px] h-[60px] rounded-full drop-shadow-xl" />
                         <p className='text-sm max-w-[400px]'> I am a frontend developer from Morocco with 2+ years of experience in creating dynamic and responsive web applications. </p>
                     </div>
                     <form method='post' action='#' onSubmit={(e) => e.preventDefault()} className='flex md:items-center md:space-x-4 flex-col space-y-2 md:space-y-0 md:flex-row '>
